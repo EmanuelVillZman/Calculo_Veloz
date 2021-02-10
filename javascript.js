@@ -1,7 +1,7 @@
 
 function principal(){
    var res=(Math.floor(Math.random()*10))+1
-   var cadena=""+res
+   var cadena=''+res
    var aux
    for (let i = 0; i < 10; i++) {
       var operacion = (Math.floor(Math.random()*4))+1
@@ -9,24 +9,28 @@ function principal(){
          case 1:
             aux=calculoValor()
             res=res+aux
-            cadena=cadena+" +"+aux
+            //imprimir.push(" + "+aux)
+            cadena=cadena+" + "+aux
             break;
          case 2:
             aux=calculoValor()
             res=res-aux
-            cadena=cadena+" -"+aux
+            //imprimir.push(" - "+aux)
+            cadena=cadena+" - "+aux
             break;
          case 3:
             aux=calculoValor()
             res=res*aux
-            cadena=cadena+" x"+aux
+            //imprimir.push(" x "+aux)
+            cadena=cadena+" x "+aux
             break;
          case 4:
             do {
                aux=calculoValor()
             } while (res%aux != 0);
             res=res/aux
-            cadena=cadena+" /"+aux
+            //imprimir.push(" / "+aux)
+            cadena=cadena+" / "+aux
             break;
          default:
             alert("Error en el switch")

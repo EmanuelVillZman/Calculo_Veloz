@@ -3,8 +3,8 @@ body{
 }
 p, input{
    color: #EFEFEF;
-   border: 1px;
-   margin-left: 100px;
+   /*border: 1px;*/
+   margin-left: 20px;
    padding-left: 0px;
    margin-bottom: 50px;
    padding-bottom: 0px;
@@ -13,6 +13,7 @@ p, input{
    background-color: #444444;
 }
 #ecuacion{
+   width: 980px;
    margin-top:500px ;
    padding-top:0px;
    padding-right: 0px;
@@ -26,4 +27,5 @@ p, input{
 }
 #resultado{
    padding-left: 80px;
+   width: 300px;
 }
