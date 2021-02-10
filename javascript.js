@@ -1,11 +1,47 @@
 
 function principal(){
-   var valor="12355555555555555555555555"
-   document.getElementById("ecuacion").value=valor
-   document.getElementById("resultado").value="RESULTADO"  
-   //var a=Math.floor(Math.random()*100)
-   //var element= document.getElementById("parrafo")
-   //element.id=a
+   var res=(Math.floor(Math.random()*10))+1
+   var cadena=""+res
+   var aux
+   for (let i = 0; i < 10; i++) {
+      var operacion = (Math.floor(Math.random()*4))+1
+      switch (operacion) {
+         case 1:
+            aux=calculoValor()
+            res=res+aux
+            cadena=cadena+" +"+aux
+            break;
+         case 2:
+            aux=calculoValor()
+            res=res-aux
+            cadena=cadena+" -"+aux
+            break;
+         case 3:
+            aux=calculoValor()
+            res=res*aux
+            cadena=cadena+" x"+aux
+            break;
+         case 4:
+            do {
+               aux=calculoValor()
+            } while (res%aux != 0);
+            res=res/aux
+            cadena=cadena+" /"+aux
+            break;
+         default:
+            alert("Error en el switch")
+            break;
+      }
+   }
+   document.getElementById("ecuacion").value=cadena
+   sleep(5000).then(() => {
+      document.getElementById("resultado").value=res
+  });
+   //document.getElementById("resultado").value=res
 }
 function calculoValor(){
+   return (Math.floor(Math.random()*10))+1
 }
+function sleep (time) {
+   return new Promise((resolve) => setTimeout(resolve, time));
+ }
